@@ -6,15 +6,12 @@ body {
   color: rgb(207, 205, 205);
 }
 
-.select {
-  height: 200px;
-}
-
 .gameContainer {
   display: flex;
   justify-content: center;
   background-color: rgb(23, 141, 129);
 }
+
 
 
 
