@@ -10,29 +10,30 @@
 </head>
 
 <body>
-  <div class="gameDiv">
-    <h1>Rock, Paper, Scissors!</h1>
-    <h2>Current Score:</h2>
-
-    <div class="score"> 
-      <div class="playerScore">
-          <h2>Player</h2>
-          <p class="p-count">0</p>
-      </div>      
-
-        <div class="computerScore">
-          <h2>Computer</h2>
-          <p class="c-count">0</p>
-        </div>
+  <div class="container">
+    <header calss="header">
+     <h1>Rock Paper Scissors</h1>
+     <button id="restart" class="restart-btn">Restart Game</button>
+     <div id="score" class="score">
+      <p>Player: 0</p>
+      <p>Computer: 0</p>
+     </div> 
+    </header>
+    <h2>Make Your Selection</h2> 
+    <div class="choices">
+      <img id="rock" width="160" src="/images/rock.png">
+      <img id="paper" width="160" src="/images/paper.png">
+      <img id="scissor" width="160" src="/images/scissor.png">
     </div>
-    
-  <div class="gameContainer" id="gameContainer">
-    <img id="rock" width="160" src="/images/rock.png">
-    <img id="paper" width="160" src="/images/paper.png">
-    <img id="scissor" width="160" src="/images/scissor.png">
   </div>
-  
-  <div class="result"></div>
+
+<div class="modal">
+  <div id="result" class="modal-content">
+    <h1>You Win</h1>
+    <img src="/images/rock.png">
+    <p>Computer Chose Rock</p>
+  </div>
+</div>
 
 </body>
 </html>
