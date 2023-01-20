@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #003699;
-  --dark-color: #333333;
-  --light0color: #f4f4f4;
+  --primary-color: #0d8d82;
+  --dark-color: #3e9d59;
+  --light-color: #3fa18d;
   --lose-color: #dc3545;
   --win-color: #28a745;
 }
@@ -30,7 +30,7 @@ body {
 .restart-btn {
   display: none;
   background:var(--light-color);
-  color: rgb(185, 165, 165);
+  color: rgb(37, 34, 34);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   cursor: pointer;
@@ -58,7 +58,7 @@ body {
   display: grid; 
   grid-template-columns: repeat(2, 1fr);
   font-size: 1.2rem;
-  color: rgb(240, 230, 230);
+  color: rgb(135, 255, 177);
 }
 
 .score p:first-child {
@@ -76,6 +76,8 @@ body {
 
 .choice {
   cursor: pointer;
+  background-color: rgb(24, 175, 175);
+  border-radius: 100px;
 }
 
 .choice:hover {
