@@ -5,7 +5,7 @@ const restart = document.getElementById("restart");
 const modal = document.querySelector(".modal");
 const scoreboard = {
   player: 0,
-  compuer: 0
+  computer: 0
 }
 
 //Play game
@@ -14,8 +14,7 @@ function play(e){
   const playerChoice = e.target.id;
   const computerChoice = getComputerChoice();
   const winner = getWinner(playerChoice, computerChoice);
-
-  console.log(playerChoice, computerChoice, winner);
+  showWinner(winner, computerChoice);
 }
  //Get computers choice
 function getComputerChoice() {
@@ -57,12 +56,48 @@ function getWinner(p, c) {
 function showWinner(winner, computerChoice) {
   if(winner === "player") {
     scoreboard.player++;
-    result.innerTEXT = `
+    result.innerHTML = `
       <h1 class="text-win">You Win</h1>
-      <`
+      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <p>Computer chose <strong>${computerChoice}</strong>
+      `;
+  } else if(winner === 'computer') {
+    scoreboard.computer++;
+    result.innerHTML = `
+      <h1 class="text-lose">You Lose</h1>
+      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <p>Computer chose <strong>${computerChoice}</strong>
+      `;
+  } else {
+    result.innerHTML = `
+      <h1>It's A Draw</h1>
+      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <p>Computer chose <strong>${computerChoice}</strong>
+      `;
   }
+  score.innerHTML = `
+    <p>Player: ${scoreboard.player}</p>
+    <p>Computer: ${scoreboard.computer}</p>
+    `;
+
+  modal.style.display = "block";
 }
 
+function restartGame() {
+  scoreboard.player = 0;
+  scoreboard.computer = 0;
+  score.innerHTML = `
+    <p>Player: 0</p>
+    <p>Computer: 0</p>
+  `;
+}
+
+function clearModal(e) {
+  if(e.target == modal) {
+    modal.style.display = "none";
+  }
+}
 //Event listeners
 choices.forEach(choice => choice.addEventListener("click", play));
-
+window.addEventListener("click", clearModal);
+restart.addEventListener("click", restartGame);
