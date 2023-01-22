@@ -58,20 +58,20 @@ function showWinner(winner, computerChoice) {
     scoreboard.player++;
     result.innerHTML = `
       <h1 class="text-win">You Win</h1>
-      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <img id="rock" width="160" src="images/${computerChoice}.png">
       <p>Computer chose <strong>${computerChoice}</strong>
       `;
   } else if(winner === 'computer') {
     scoreboard.computer++;
     result.innerHTML = `
       <h1 class="text-lose">You Lose</h1>
-      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <img id="rock" width="160" src="images/${computerChoice}.png">
       <p>Computer chose <strong>${computerChoice}</strong>
       `;
   } else {
     result.innerHTML = `
       <h1>It's A Draw</h1>
-      <img id="rock" width="160" src="/images/${computerChoice}.png">
+      <img id="rock" width="160" src="images/${computerChoice}.png">
       <p>Computer chose <strong>${computerChoice}</strong>
       `;
   }
